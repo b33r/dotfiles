@@ -56,6 +56,7 @@ brew install sqlmap
 brew install ack
 brew install git
 brew install git-lfs
+brew install imagesnap
 brew install imagemagick --with-webp
 brew install pigz
 brew install pv

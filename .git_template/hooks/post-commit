@@ -1,0 +1,65 @@
+#!/usr/bin/env node
+
+var
+    path = require('path'),
+    util = require('util'),
+    exec = require('child_process').exec;
+    dir = process.env.HOME + '/.gitshots';
+
+var safeName = function(input) {
+    var retval = "", i, char;
+
+    function isSafeCode(code) {
+        return ! isControlCode(code) && ! isRestrictedCode(code);
+    }
+
+    function isControlCode(code) {
+        return code <= 0x1f || (code >= 0x80 && code <= 0x9f);
+    }
+
+    var RESTRICTED_CODES = "\\/:*?\"<>|".split("").map(function(char) {
+        return char.charCodeAt(0);
+    });
+
+    function isRestrictedCode(code) {
+        return RESTRICTED_CODES.indexOf(code) !== -1;
+    }
+
+    for (i = 0; i < input.length; i++) {
+        if (isSafeCode(input.charCodeAt(i))) {
+            retval += input[i];
+        }
+    }
+    return retval;};
+
+var ts = function () {
+    var Now = new Date();
+    return Now.getFullYear() + '.' + (Now.getMonth() + 1) + '.' + Now.getDate();
+}
+
+var execute = function (cmd, cb) {
+    exec(cmd, function (err, stdout, stderr) {
+        if (err || stderr)
+            return (cb && cb(err || stderr, null));
+
+        if (typeof cb === 'function')
+            return cb(null, stdout.replace('\n', ''));
+    });
+}
+
+var filename = function (repo, sha, msg) {
+    return ts() + ' ' + msg + ' (' + repo + ' ' + sha + ').jpg';
+}
+
+execute('git rev-parse --show-toplevel', function (err, repo) {
+    var repo = path.basename(repo);
+
+    execute('git log -1 --pretty=format:%s', function (err, msg) {
+
+        execute('git rev-parse --short HEAD', function (err, sha) {
+            var img = dir + '/' + filename(repo, sha, msg).replace('"', '\\"');
+            execute('imagesnap -q "' + img + '"');
+        });
+    });
+});
+
