@@ -1,41 +1,89 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"bold_folder_labels": true,
+	"caret_extra_bottom": 2,
+	"caret_extra_top": 2,
+	"caret_extra_width": 2,
+	"caret_style": "solid",
+	"close_windows_when_empty": false,
+	"color_scheme": "Packages/User/Monokai Soda (SL).tmTheme",
 	"default_encoding": "UTF-8",
 	"default_line_ending": "unix",
 	"detect_indentation": false,
+	"detect_slow_plugins": false,
+	"draw_centered": false,
 	"draw_white_space": "all",
-	"ensure_newline_at_eof_on_save": false,
+	"ensure_newline_at_eof_on_save": true,
+	"fade_fold_buttons": false,
 	"file_exclude_patterns":
 	[
 		".DS_Store",
 		"Desktop.ini",
-		"*.pyc",
-		"._*",
 		"Thumbs.db",
 		".Spotlight-V100",
 		".Trashes"
 	],
+	"find_selected_text": true,
+	"fold_buttons": true,
 	"folder_exclude_patterns":
 	[
 		".git",
-		"node_modules"
+		"storage"
 	],
 	"font_face": "Monaco",
 	"font_size": 13,
+	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
+	"ignored_packages":
+	[
+		"C#",
+		"BracketHighlighter",
+		"SublimeLinter-jshint",
+		"ASP",
+		"SublimeLinter-jscs",
+		"Node Completions",
+		"AppleScript",
+		"ActionScript",
+		"Clojure",
+		"SublimeLinter"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"indent_subsequent_lines": true,
 	"line_padding_bottom": 5,
+	"line_padding_top": 1,
 	"match_brackets": true,
 	"match_brackets_angle": true,
+	"new_window_settings":
+	{
+		"show_minimap": true
+	},
+	"open_files_in_new_window": false,
+	"overlay_scroll_bars": "enabled",
 	"remember_open_files": false,
 	"rulers":
 	[
-		80
+		80,
+		100
 	],
+	"scroll_past_end": true,
 	"show_encoding": true,
+	"show_full_path": true,
 	"show_line_endings": true,
+	"show_tab_close_buttons": false,
+	"soda_classic_tabs": true,
+	"soda_folder_icons": true,
+	"tab_completion": true,
 	"tab_size": 2,
-	"translate_tabs_to_spaces": false,
+	"theme": "Soda Light 3.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"tree_animation_enabled": true,
+	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
+	"vintage_start_in_command_mode": false,
+	"wide_caret": true,
 	"word_wrap": true
 }
