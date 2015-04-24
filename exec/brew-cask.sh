@@ -46,6 +46,7 @@ brew cask install iterm2 2> /dev/null
 brew cask install jd-gui 2> /dev/null
 brew cask install lastfm 2> /dev/null
 brew cask install macvim 2> /dev/null
+brew cask install menumeters 2> /dev/null
 brew cask install mou 2> /dev/null
 brew cask install mysqlworkbench 2> /dev/null
 brew cask install nmap 2> /dev/null
